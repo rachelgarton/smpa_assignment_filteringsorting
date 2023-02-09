@@ -48,9 +48,12 @@ housesales %>%
 # 4) Filter for only where the city is Houston as above, and now also filter for only 
 # the year 2010. The results should give you 12 records, one for each month in 2010 for Houston.
 
+housesales %>%  filter(city == "Houston") -> houstonhousesales
+houstonhousesales %>%
+  filter(year == 2010)
 
-
-
+# For this question, I made a new data set in the environment from the answer to question 3,
+# then filtered to show the year 2010.
 
 # 5) Build on what you've done above. Filter for only where the city is Houston as above, 
 # and the year is 2010. Now add a sort using arrange() to sort the results based on the number
