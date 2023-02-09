@@ -59,16 +59,23 @@ houstonhousesales %>%
 # and the year is 2010. Now add a sort using arrange() to sort the results based on the number
 # of home sales (the "sales" column) from most to least.
 
+houstonhousesales %>% filter(year == 2010) -> houstonsales2010
 
+houstonsales2010 %>% 
+  arrange(desc(sales))
 
-
+# For this one, I had to use one of tricks from class because it at first wouldn't let me
+# arrange using just the "houstonsales" data set. So, I made a new data set of houston sales
+# 2010, then arranged the sales in descending order.
 
 # 6) Piggyback on what you've done above. 
 # Do the same as #5, only this time instead of Houston return records for Dallas
 
+housesales %>% filter(city == "Dallas") -> dallashousesales
+dallashousesales %>% filter(year == 2010) %>% arrange(desc(sales))
 
-
-
+# I made a new data set of dallas house sales -just 'cause- then used the same method as the
+# previous questions but replaced the city of Houston with Dallas.
 
 # 7) Sometimes metrics like home sales have a seasonal quality to them, much like 
 # retail sales. There are times of year that are naturally more active, and others where
