@@ -86,25 +86,30 @@ dallashousesales %>% filter(year == 2010) %>% arrange(desc(sales))
 #
 # Filter for the city is Dallas, and the month is June (the number 6). 
 
+dallashousesales %>% filter(month == 6)
 
-
-
+# For this question, I took the dallashousesales data set and I filtered the data set
+# for the month of June
 
 # 8) Build on what we've done above. Now that we have June numbers for Dallas for every year,
 # arrange the results by sales from highest-to-lowest to show what year had the highest June sales.
 
+dallashousesales %>% filter(month == 6) %>% arrange(desc(sales))
 
-
-
-
+# Same as last question, but arranged in order of sales. Now we know 2006 had the highest year
+# in sales.
 
 # 9) Now do the same as Question 8, but this time instead of Dallas, show results for Corpus Christi
 
+housesales %>% filter(city == "Corpus Christi") %>% filter(month == 6) %>% arrange(desc(sales))
 
-
-
-
+# Same as last question, but I replaced Dallas with Corpus Christi.
 
 # 10) Finally, using the Corpus Christi code from Question 9, instead of June
 # use the month of February (2) instead.
 
+housesales %>% filter(city == "Corpus Christi") -> corpuschristihousesales
+corpuschristihousesales %>% filter(month == 2) %>% arrange(desc(sales))
+
+# I made a Corpus Christi data set in the environment, then repeated the steps of question 9
+# but with February instead of June. Now we know 2006 saw the highest month of sales.
